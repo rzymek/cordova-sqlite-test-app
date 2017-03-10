@@ -3,6 +3,12 @@ var database = null;
 var nextUser = 101;
 
 function initDatabase() {
+  alert(
+    "window.sqlitePlugin: "+typeof window.sqlitePlugin+"\n"+
+    "window.SQLitePlugin: "+typeof window.SQLitePlugin+"\n"+
+    "window.SQLitePlugin.sqlitePlugin: "+typeof window.SQLitePlugin.sqlitePlugin+"\n"+
+    "window.SQLitePlugin.sqlitePlugin.openDatabase: "+typeof window.SQLitePlugin.sqlitePlugin.openDatabase
+  );
   database = window.sqlitePlugin.openDatabase({name: 'sample.db', location: 'default'});
 
   database.transaction(function(transaction) {
